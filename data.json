@@ -1,0 +1,178 @@
+{
+  "metadatos": {
+    "version": "1.0.0",
+    "institucion": "UNITEC"
+  },
+  "registros": [
+    {
+      "id": 1,
+      "cliente": "Katherine Muñoz",
+      "dia": "Lunes",
+      "rutina_dia": "Pierna (Cuádriceps): Sentadilla libre, prensa 45°, extensiones de cuádriceps y zancadas (4x12)",
+      "desayuno": {
+        "comida": "Arepa asada con 3 huevos",
+        "porciones": 1,
+        "calorias_por_porcion": 450,
+        "proteinas_por_porcion": 24,
+        "calorias_totales": 450,
+        "proteinas_totales": 24
+      },
+      "almuerzo": {
+        "comida": "Huevo con arroz y pollo",
+        "porciones": 2,
+        "calorias_por_porcion": 490,
+        "proteinas_por_porcion": 31,
+        "calorias_totales": 980,
+        "proteinas_totales": 62
+      },
+      "cena": {
+        "comida": "Batido de avena con arepa y 3 huevos",
+        "porciones": 1,
+        "calorias_por_porcion": 640,
+        "proteinas_por_porcion": 33,
+        "calorias_totales": 640,
+        "proteinas_totales": 33
+      },
+      "resumen_dia": {
+        "calorias_dia": 2070,
+        "proteinas_dia": 119
+      }
+    },
+    {
+      "id": 2,
+      "cliente": "Katherine Muñoz",
+      "dia": "Martes",
+      "rutina_dia": "Espalda y Bíceps: Jalón al pecho, remo con barra, remo unilateral y curl con mancuernas (4x10)",
+      "desayuno": {
+        "comida": "Avena cocida con cambur y 2 huevos",
+        "porciones": 1,
+        "calorias_por_porcion": 440,
+        "proteinas_por_porcion": 21,
+        "calorias_totales": 440,
+        "proteinas_totales": 21
+      },
+      "almuerzo": {
+        "comida": "Carne molida magra con arroz y ensalada",
+        "porciones": 2,
+        "calorias_por_porcion": 470,
+        "proteinas_por_porcion": 30,
+        "calorias_totales": 940,
+        "proteinas_totales": 60
+      },
+      "cena": {
+        "comida": "Arepa con pollo mechado y queso",
+        "porciones": 1,
+        "calorias_por_porcion": 460,
+        "proteinas_porcion": 32,
+        "calorias_totales": 460,
+        "proteinas_totales": 32
+      },
+      "resumen_dia": {
+        "calorias_dia": 1840,
+        "proteinas_dia": 113
+      }
+    },
+    {
+      "id": 3,
+      "cliente": "Katherine Muñoz",
+      "dia": "Miércoles",
+      "rutina_dia": "Pecho, Hombro y Tríceps: Press plano, press militar, elevaciones laterales y fondos (4x12)",
+      "desayuno": {
+        "comida": "Panquecas de avena con huevo y miel",
+        "porciones": 2,
+        "calorias_por_porcion": 260,
+        "proteinas_porcion": 12,
+        "calorias_totales": 520,
+        "proteinas_totales": 24
+      },
+      "almuerzo": {
+        "comida": "Pechuga de pollo a la plancha con pasta y vegetales",
+        "porciones": 1,
+        "calorias_por_porcion": 530,
+        "proteinas_por_porcion": 38,
+        "calorias_totales": 530,
+        "proteinas_totales": 38
+      },
+      "cena": {
+        "comida": "Tortilla de 3 huevos con atún y aguacate",
+        "porciones": 1,
+        "calorias_por_porcion": 430,
+        "proteinas_porcion": 36,
+        "calorias_totales": 430,
+        "proteinas_totales": 36
+      },
+      "resumen_dia": {
+        "calorias_dia": 1480,
+        "proteinas_dia": 98
+      }
+    },
+    {
+      "id": 4,
+      "cliente": "Katherine Muñoz",
+      "dia": "Jueves",
+      "rutina_dia": "Pierna (Femoral y Glúteo): Peso muerto rumano, femoral acostado, hip thrust y búlgara (4x12)",
+      "desayuno": {
+        "comida": "Arepa con 3 huevos revueltos y aguacate",
+        "porciones": 1,
+        "calorias_por_porcion": 490,
+        "proteinas_porcion": 23,
+        "calorias_totales": 490,
+        "proteinas_totales": 23
+      },
+      "almuerzo": {
+        "comida": "Pollo guisado con caraotas y arroz",
+        "porciones": 2,
+        "calorias_por_porcion": 500,
+        "proteinas_por_porcion": 34,
+        "calorias_totales": 1000,
+        "proteinas_totales": 68
+      },
+      "cena": {
+        "comida": "Batido de avena con leche y cambur",
+        "porciones": 1,
+        "calorias_por_porcion": 410,
+        "proteinas_por_porcion": 18,
+        "calorias_totales": 410,
+        "proteinas_totales": 18
+      },
+      "resumen_dia": {
+        "calorias_dia": 1900,
+        "proteinas_dia": 109
+      }
+    },
+    {
+      "id": 5,
+      "cliente": "Katherine Muñoz",
+      "dia": "Viernes",
+      "rutina_dia": "Full Body y Core: Peso muerto, press inclinado, jalón y plancha abdominal (4x10)",
+      "desayuno": {
+        "comida": "Tostadas con 3 huevos y queso blanco",
+        "porciones": 1,
+        "calorias_por_porcion": 450,
+        "proteinas_por_porcion": 25,
+        "calorias_totales": 450,
+        "proteinas_totales": 25
+      },
+      "almuerzo": {
+        "comida": "Lomo de cerdo magro con yuca y ensalada",
+        "porciones": 2,
+        "calorias_por_porcion": 465,
+        "proteinas_por_porcion": 29,
+        "calorias_totales": 930,
+        "proteinas_totales": 58
+      },
+      "cena": {
+        "comida": "Arepa con huevos y ensalada de pollo",
+        "porciones": 1,
+        "calorias_por_porcion": 470,
+        "proteinas_porcion": 33,
+        "calorias_totales": 470,
+        "proteinas_totales": 33
+      },
+      "resumen_dia": {
+        "calorias_dia": 1850,
+        "proteinas_dia": 116
+      }
+    }
+  ]
+}

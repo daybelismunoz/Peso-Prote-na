@@ -1,0 +1,370 @@
+:root {
+  --fondo-pagina: #0f172a;
+  --fondo-tarjeta: #1e293b;
+  --fondo-input: #0f172a;
+  --borde-suave: #334155;
+  --texto-principal: #f8fafc;
+  --texto-secundario: #cbd5e1;
+  --acento-principal: #22c55e;
+  --acento-hover: #16a34a;
+  --acento-secundario: #38bdf8;
+  --peligro: #ef4444;
+  --radio-borde: 12px;
+  --espaciado: 1rem;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--fondo-pagina);
+  color: var(--texto-principal);
+  line-height: 1.5;
+}
+
+/* Encabezado y navegación */
+.encabezado {
+  background-color: var(--fondo-tarjeta);
+  border-bottom: 1px solid var(--borde-suave);
+  padding: 1.5rem var(--espaciado);
+  text-align: center;
+}
+
+.encabezado h1 {
+  font-size: 1.75rem;
+  color: var(--acento-principal);
+  margin-bottom: 0.35rem;
+}
+
+.encabezado p {
+  color: var(--texto-secundario);
+  font-size: 0.95rem;
+}
+
+.navegacion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.65rem;
+  margin-top: 1.15rem;
+}
+
+.navegacion a {
+  text-decoration: none;
+  color: var(--texto-principal);
+  background-color: var(--fondo-pagina);
+  border: 1px solid var(--borde-suave);
+  padding: 0.5rem 0.9rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.navegacion a:hover {
+  border-color: var(--acento-principal);
+  background-color: rgba(34, 197, 94, 0.12);
+}
+
+/* Contenedor principal y secciones */
+.contenedor-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem var(--espaciado) 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.modulo {
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-borde);
+  padding: 1.5rem;
+}
+
+.modulo-cabecera {
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid var(--borde-suave);
+  padding-bottom: 0.75rem;
+}
+
+.modulo-cabecera h2 {
+  font-size: 1.3rem;
+  color: var(--acento-secundario);
+}
+
+.modulo-cabecera p {
+  color: var(--texto-secundario);
+  font-size: 0.92rem;
+  margin-top: 0.25rem;
+}
+
+/* 1. Dashboard: grid de Lunes a Viernes */
+.grid-dias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.tarjeta-dia {
+  background-color: var(--fondo-pagina);
+  border: 1px solid var(--borde-suave);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.tarjeta-dia h3 {
+  color: var(--acento-principal);
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--borde-suave);
+  padding-bottom: 0.35rem;
+}
+
+.tarjeta-dia .rutina-texto {
+  font-size: 0.88rem;
+  color: var(--texto-secundario);
+}
+
+.tarjeta-dia .lista-comidas {
+  list-style: none;
+  font-size: 0.88rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.tarjeta-dia .resumen-diario {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  border-top: 1px dashed var(--borde-suave);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--acento-secundario);
+}
+
+/* 2. Formulario de registro / edición */
+.formulario-plan {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo-ancho-completo {
+  grid-column: 1 / -1;
+}
+
+label {
+  font-size: 0.88rem;
+  color: var(--texto-secundario);
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  background-color: var(--fondo-input);
+  color: var(--texto-principal);
+  border: 1px solid var(--borde-suave);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--acento-principal);
+}
+
+.bloque-comida {
+  border: 1px solid var(--borde-suave);
+  border-radius: 10px;
+  padding: 1rem;
+  background-color: rgba(15, 23, 42, 0.55);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.bloque-comida legend {
+  padding: 0 0.5rem;
+  font-weight: 600;
+  color: var(--acento-principal);
+}
+
+.acciones-formulario,
+.acciones-reporte {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.65rem 1.15rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  transition: opacity 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.92;
+}
+
+#btn-guardar {
+  background-color: var(--acento-principal);
+  color: #052e16;
+}
+
+#btn-limpiar,
+#btn-restaurar-datos {
+  background-color: var(--borde-suave);
+  color: var(--texto-principal);
+}
+
+.btn-editar {
+  background-color: var(--acento-secundario);
+  color: #082f49;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.82rem;
+}
+
+.btn-eliminar {
+  background-color: var(--peligro);
+  color: #ffffff;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.82rem;
+}
+
+.mensaje-estado {
+  font-size: 0.9rem;
+  color: var(--acento-principal);
+  min-height: 1.25rem;
+}
+
+/* 3. Tabla dinámica */
+.controles-tabla {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.controles-tabla select,
+.controles-tabla input {
+  max-width: 260px;
+}
+
+.tabla-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+th,
+td {
+  border: 1px solid var(--borde-suave);
+  padding: 0.65rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  background-color: var(--fondo-pagina);
+  color: var(--acento-secundario);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(15, 23, 42, 0.45);
+}
+
+.celda-acciones {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+/* 4. Módulo de reportes */
+.grid-reportes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.tarjeta-reporte {
+  background-color: var(--fondo-pagina);
+  border: 1px solid var(--borde-suave);
+  border-radius: 10px;
+  padding: 1.1rem;
+}
+
+.tarjeta-reporte h3 {
+  font-size: 0.92rem;
+  color: var(--texto-secundario);
+  margin-bottom: 0.4rem;
+}
+
+.dato-destacado {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--acento-principal);
+}
+
+.dato-sub {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--acento-secundario);
+}
+
+.pie-pagina {
+  text-align: center;
+  padding: 1.25rem var(--espaciado);
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--borde-suave);
+}
+
+/* Adaptación a celulares / pantallas pequeñas */
+@media (max-width: 768px) {
+  .encabezado h1 {
+    font-size: 1.4rem;
+  }
+
+  .modulo {
+    padding: 1rem;
+  }
+
+  .formulario-plan {
+    grid-template-columns: 1fr;
+  }
+
+  .controles-tabla select,
+  .controles-tabla input {
+    max-width: 100%;
+  }
+}

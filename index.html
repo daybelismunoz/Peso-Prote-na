@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gym & Nutrición (Lunes a Viernes)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Plan de Gimnasio y Nutrición</h1>
+    <p>Organización semanal de lunes a viernes: rutina, comidas, calorías y proteínas</p>
+    <nav class="navegacion" aria-label="Módulos principales">
+      <a href="#dashboard">1. Dashboard</a>
+      <a href="#formulario-modulo">2. Registro / Edición</a>
+      <a href="#tabla-modulo">3. Tabla Dinámica</a>
+      <a href="#reportes-modulo">4. Reportes</a>
+    </nav>
+  </header>
+
+  <main class="contenedor-principal">
+    <!-- 1. DASHBOARD ORDENADO DE LUNES A VIERNES -->
+    <section id="dashboard" class="modulo" aria-labelledby="titulo-dashboard">
+      <div class="modulo-cabecera">
+        <h2 id="titulo-dashboard">1. Dashboard (Lunes a Viernes)</h2>
+        <p>Vista general de la rutina, desayuno, almuerzo, cena y totales diarios.</p>
+      </div>
+      <div id="dashboard-tarjetas" class="grid-dias">
+        <!-- JavaScript llenará las tarjetas de Lunes a Viernes desde data.json / localStorage -->
+      </div>
+    </section>
+
+    <!-- 2. FORMULARIO DE REGISTRO / EDICIÓN -->
+    <section id="formulario-modulo" class="modulo" aria-labelledby="titulo-formulario">
+      <div class="modulo-cabecera">
+        <h2 id="titulo-formulario">2. Formulario de Registro y Edición</h2>
+        <p>Agrega o modifica la rutina, comidas, porciones, calorías y proteínas de un día.</p>
+      </div>
+
+      <form id="form-registro" class="formulario-plan" novalidate>
+        <input type="hidden" id="registro-id" name="registroId" />
+
+        <div class="campo-grupo">
+          <label for="dia-semana">Día de la semana</label>
+          <select id="dia-semana" name="dia" required>
+            <option value="">Selecciona un día</option>
+            <option value="Lunes">Lunes</option>
+            <option value="Martes">Martes</option>
+            <option value="Miércoles">Miércoles</option>
+            <option value="Jueves">Jueves</option>
+            <option value="Viernes">Viernes</option>
+          </select>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="cliente-nombre">Nombre / Cliente</label>
+          <input type="text" id="cliente-nombre" name="cliente" placeholder="Ej. Katherine Muñoz" required />
+        </div>
+
+        <div class="campo-grupo campo-ancho-completo">
+          <label for="rutina-dia">Rutina de gimnasio del día</label>
+          <textarea id="rutina-dia" name="rutina_dia" rows="2" placeholder="Ej. Pierna: sentadilla, prensa, extensiones..." required></textarea>
+        </div>
+
+        <!-- Desayuno -->
+        <fieldset class="bloque-comida">
+          <legend>Desayuno</legend>
+          <label for="desayuno-comida">Comida</label>
+          <input type="text" id="desayuno-comida" name="desayuno_comida" placeholder="Ej. Arepa asada con 3 huevos" required />
+
+          <label for="desayuno-porciones">Porciones</label>
+          <input type="number" id="desayuno-porciones" name="desayuno_porciones" min="1" step="1" value="1" required />
+
+          <label for="desayuno-calorias">Calorías por porción</label>
+          <input type="number" id="desayuno-calorias" name="desayuno_calorias" min="0" step="1" value="0" required />
+
+          <label for="desayuno-proteinas">Proteínas por porción (g)</label>
+          <input type="number" id="desayuno-proteinas" name="desayuno_proteinas" min="0" step="1" value="0" required />
+        </fieldset>
+
+        <!-- Almuerzo -->
+        <fieldset class="bloque-comida">
+          <legend>Almuerzo</legend>
+          <label for="almuerzo-comida">Comida</label>
+          <input type="text" id="almuerzo-comida" name="almuerzo_comida" placeholder="Ej. Huevo con arroz y pollo" required />
+
+          <label for="almuerzo-porciones">Porciones</label>
+          <input type="number" id="almuerzo-porciones" name="almuerzo_porciones" min="1" step="1" value="1" required />
+
+          <label for="almuerzo-calorias">Calorías por porción</label>
+          <input type="number" id="almuerzo-calorias" name="almuerzo_calorias" min="0" step="1" value="0" required />
+
+          <label for="almuerzo-proteinas">Proteínas por porción (g)</label>
+          <input type="number" id="almuerzo-proteinas" name="almuerzo_proteinas" min="0" step="1" value="0" required />
+        </fieldset>
+
+        <!-- Cena -->
+        <fieldset class="bloque-comida">
+          <legend>Cena</legend>
+          <label for="cena-comida">Comida</label>
+          <input type="text" id="cena-comida" name="cena_comida" placeholder="Ej. Batido de avena con arepa y 3 huevos" required />
+
+          <label for="cena-porciones">Porciones</label>
+          <input type="number" id="cena-porciones" name="cena_porciones" min="1" step="1" value="1" required />
+
+          <label for="cena-calorias">Calorías por porción</label>
+          <input type="number" id="cena-calorias" name="cena_calorias" min="0" step="1" value="0" required />
+
+          <label for="cena-proteinas">Proteínas por porción (g)</label>
+          <input type="number" id="cena-proteinas" name="cena_proteinas" min="0" step="1" value="0" required />
+        </fieldset>
+
+        <div class="acciones-formulario campo-ancho-completo">
+          <button type="submit" id="btn-guardar">Guardar en localStorage</button>
+          <button type="button" id="btn-limpiar">Limpiar formulario</button>
+        </div>
+
+        <p id="mensaje-formulario" class="mensaje-estado campo-ancho-completo" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <!-- 3. TABLA DINÁMICA CON FILTROS POR DÍA -->
+    <section id="tabla-modulo" class="modulo" aria-labelledby="titulo-tabla">
+      <div class="modulo-cabecera">
+        <h2 id="titulo-tabla">3. Tabla Dinámica</h2>
+        <p>Filtra por día de lunes a viernes, busca comidas o edita/elimina registros.</p>
+      </div>
+
+      <div class="controles-tabla">
+        <label for="filtro-dia">Filtrar por día:</label>
+        <select id="filtro-dia">
+          <option value="Todos">Todos (Lunes a Viernes)</option>
+          <option value="Lunes">Lunes</option>
+          <option value="Martes">Martes</option>
+          <option value="Miércoles">Miércoles</option>
+          <option value="Jueves">Jueves</option>
+          <option value="Viernes">Viernes</option>
+        </select>
+
+        <label for="buscar-texto">Buscar comida o rutina:</label>
+        <input type="search" id="buscar-texto" placeholder="Ej. avena, pollo, pierna..." />
+      </div>
+
+      <div class="tabla-responsive">
+        <table id="tabla-registros">
+          <thead>
+            <tr>
+              <th>Día</th>
+              <th>Rutina</th>
+              <th>Desayuno</th>
+              <th>Almuerzo</th>
+              <th>Cena</th>
+              <th>Calorías Día</th>
+              <th>Proteínas Día (g)</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="cuerpo-tabla">
+            <!-- Filas generadas dinámicamente por JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 4. MÓDULO DE REPORTES CON LOS TOTALES -->
+    <section id="reportes-modulo" class="modulo" aria-labelledby="titulo-reportes">
+      <div class="modulo-cabecera">
+        <h2 id="titulo-reportes">4. Módulo de Reportes</h2>
+        <p>Totales consolidados de calorías y proteínas de lunes a viernes.</p>
+      </div>
+
+      <div id="resumen-reportes" class="grid-reportes">
+        <article class="tarjeta-reporte">
+          <h3>Calorías Totales (Lun–Vie)</h3>
+          <p id="total-calorias-semana" class="dato-destacado">0 kcal</p>
+        </article>
+        <article class="tarjeta-reporte">
+          <h3>Proteínas Totales (Lun–Vie)</h3>
+          <p id="total-proteinas-semana" class="dato-destacado">0 g</p>
+        </article>
+        <article class="tarjeta-reporte">
+          <h3>Promedio Diario</h3>
+          <p id="promedio-diario" class="dato-sub">0 kcal / 0 g</p>
+        </article>
+      </div>
+
+      <div class="acciones-reporte">
+        <button type="button" id="btn-restaurar-datos">Restaurar datos base (data.json)</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-pagina">
+    <p>Proyecto Web — Gestión de Rutinas y Nutrición (Lunes a Viernes)</p>
+  </footer>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
